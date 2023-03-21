@@ -5,10 +5,10 @@ const topGainer = 'https://financialmodelingprep.com/api/v3/stock_market/gainers
 const topLosser = 'https://financialmodelingprep.com/api/v3/stock_market/losers?apikey=5d722d15c608f551c39bf2767d7e99dc';
 
 const initialState = {
-  mattrics: [],
+  matrics: [],
   isLoading: false,
   Symbols: [],
-  mattricsType: '',
+  mattricsType: 'ActiveCompany',
 };
 
 export const getActiveCompany = createAsyncThunk('/missions/getActiveCompany', async () => {
@@ -44,10 +44,22 @@ const mattricsSlice = createSlice({
       ...state,
       isLoading: false,
     }));
-    builder.addCase(getActiveCompany.fulfilled, (state) => ({
-      ...state,
-      isLoading: false,
-    }));
+    builder.addCase(getActiveCompany.fulfilled, (state, action) => {
+      const matrics = action.payload.map((matric) => ({
+        symbol: matric.symbol,
+        name: matric.name,
+        price: matric.price,
+        status: matric.change,
+        statusPercentage: matric.changesPercentage,
+      }));
+
+      return {
+        ...state,
+        matrics,
+        isLoading: false,
+        mattricsType: 'ActiveCompany',
+      };
+    });
     builder.addCase(getTopGainer.pending, (state) => ({
       ...state,
       isLoading: true,
@@ -56,10 +68,22 @@ const mattricsSlice = createSlice({
       ...state,
       isLoading: false,
     }));
-    builder.addCase(getTopGainer.fulfilled, (state) => ({
-      ...state,
-      isLoading: false,
-    }));
+    builder.addCase(getTopGainer.fulfilled, (state, action) => {
+      const matrics = action.payload.map((matric) => ({
+        symbol: matric.symbol,
+        name: matric.name,
+        price: matric.price,
+        status: matric.change,
+        statusPercentage: matric.changesPercentage,
+      }));
+
+      return {
+        ...state,
+        matrics,
+        isLoading: false,
+        mattricsType: 'TopGainer',
+      };
+    });
     builder.addCase(getTopLosser.pending, (state) => ({
       ...state,
       isLoading: true,
@@ -68,10 +92,22 @@ const mattricsSlice = createSlice({
       ...state,
       isLoading: false,
     }));
-    builder.addCase(getTopLosser.fulfilled, (state) => ({
-      ...state,
-      isLoading: false,
-    }));
+    builder.addCase(getTopLosser.fulfilled, (state, action) => {
+      const matrics = action.payload.map((matric) => ({
+        symbol: matric.symbol,
+        name: matric.name,
+        price: matric.price,
+        status: matric.change,
+        statusPercentage: matric.changesPercentage,
+      }));
+
+      return {
+        ...state,
+        matrics,
+        isLoading: false,
+        mattricsType: 'TopLosser',
+      };
+    });
   },
 });
 
