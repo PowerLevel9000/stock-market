@@ -1,23 +1,22 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Home from './components/Home';
 import { getActiveCompany, getTopGainer, getTopLosser } from './redux/home/homeSlice';
 
 function App() {
   const dispatch = useDispatch();
+  const type = useSelector((store) => store.mattricsType);
 
   useEffect(() => {
-    dispatch(getActiveCompany());
+    if (type === 'ActiveCompany') {
+      dispatch(getActiveCompany());
+    } else if (type === 'TopGainer') {
+      dispatch(getTopGainer());
+    } else if (type === 'TopLosser') {
+      dispatch(getTopLosser());
+    }
   }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(getTopGainer());
-  }, [dispatch, 'TopGainer']);
-
-  useEffect(() => {
-    dispatch(getTopLosser());
-  }, [dispatch, 'TopLosser']);
 
   return (
     <div className="App">

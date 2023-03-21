@@ -9,6 +9,7 @@ const initialState = {
   isLoading: false,
   Symbols: [],
   mattricsType: 'ActiveCompany',
+  error: '',
 };
 
 export const getActiveCompany = createAsyncThunk('/missions/getActiveCompany', async () => {
@@ -45,6 +46,7 @@ const mattricsSlice = createSlice({
       isLoading: false,
     }));
     builder.addCase(getActiveCompany.fulfilled, (state, action) => {
+      console.log(state, action.payload);
       const matrics = action.payload.map((matric) => ({
         symbol: matric.symbol,
         name: matric.name,
