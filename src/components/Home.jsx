@@ -1,7 +1,10 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getCompanyDetails, setQuerry } from '../redux/details/details';
 import { setMatricsType } from '../redux/home/homeSlice';
 import Carousel from './featureComponets/Carousel';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { matricsType: type, matrics } = useSelector((store) => store.matricsReducer);
@@ -35,7 +38,7 @@ const Home = () => {
             Price Change : %
             {item.statusPercentage}
           </span>
-          <i className="fa-solid fa-arrow-right" />
+          <Link to="/details" ><i className="fa-solid fa-arrow-right" onClick={() => dispatch(setQuerry(item.symbol))} /></Link>
         </div>
       ))}
     </div>
