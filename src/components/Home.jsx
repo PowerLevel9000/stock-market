@@ -4,8 +4,8 @@ import { setMatricsType } from '../redux/home/homeSlice';
 import Carousel from './featureComponets/Carousel';
 
 const Home = () => {
-  const type = useSelector((store) => store.matricsReducer.matricsType);
-  console.log(type);
+  const { matricsType: type, matrics } = useSelector((store) => store.matricsReducer);
+  console.log(matrics);
   const dispatch = useDispatch();
   return (
     <div>
@@ -18,7 +18,26 @@ const Home = () => {
           <option value="TopGainer">Top Gainers Today</option>
         </select>
       </label>
-      <h1>Hello From Home</h1>
+
+      {matrics.map((item) => (
+        <div key={item.symbol}>
+          <span>{item.symbol}</span>
+          <h2>{item.name}</h2>
+          <strong>
+            Price : $
+            {item.price}
+          </strong>
+          <span>
+            Price Change : $
+            {item.status}
+          </span>
+          <span>
+            Price Change : %
+            {item.statusPercentage}
+          </span>
+          <i className="fa-solid fa-arrow-right" />
+        </div>
+      ))}
     </div>
   );
 };

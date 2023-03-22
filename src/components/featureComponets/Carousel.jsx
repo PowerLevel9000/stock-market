@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = useSelector((store) => store.imgReducer.imgData);
-  console.log(images);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -13,7 +12,7 @@ const Carousel = () => {
     }, 3000);
 
     return () => clearInterval(intervalId);
-  }, [currentIndex, images.length, 3000]);
+  }, [currentIndex, images.length]);
   const handleNextClick = () => {
     const nextIndex = (currentIndex + 1) % images.length;
     setCurrentIndex(nextIndex);
