@@ -1,14 +1,27 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const activeCompany = 'https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=5d722d15c608f551c39bf2767d7e99dc';
-const topGainer = 'https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=5d722d15c608f551c39bf2767d7e99dc';
-const topLosser = 'https://financialmodelingprep.com/api/v3/stock_market/losers?apikey=5d722d15c608f551c39bf2767d7e99dc';
+const activeCompany = 'https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=32ecca3bfd5c1d373bee6285500c9fb2 ';
+const topGainer = 'https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=32ecca3bfd5c1d373bee6285500c9fb2 ';
+const topLosser = 'https://financialmodelingprep.com/api/v3/stock_market/losers?apikey=32ecca3bfd5c1d373bee6285500c9fb2 ';
 
 const initialState = {
-  matrics: [],
+  matrics: [
+    {
+      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
+    },
+    {
+      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
+    },
+    {
+      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
+    },
+    {
+      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
+    },
+  ],
   isLoading: false,
   Symbols: [],
-  mattricsType: 'ActiveCompany',
+  matricsType: 'ActiveCompany',
   error: '',
 };
 
@@ -32,8 +45,13 @@ const mattricsSlice = createSlice({
   name: 'matrics',
   initialState,
   reducers: {
-    setMatrics: () => {
-      console.log('hello form SetMatrics');
+    setMatricsType: (state, { payload }) => {
+      console.log(payload);
+      const newType = payload;
+      return {
+        ...state,
+        matricsType: newType,
+      };
     },
   },
   extraReducers: (builder) => {
@@ -46,7 +64,6 @@ const mattricsSlice = createSlice({
       isLoading: false,
     }));
     builder.addCase(getActiveCompany.fulfilled, (state, action) => {
-      console.log(state, action.payload);
       const matrics = action.payload.map((matric) => ({
         symbol: matric.symbol,
         name: matric.name,
@@ -59,7 +76,7 @@ const mattricsSlice = createSlice({
         ...state,
         matrics,
         isLoading: false,
-        mattricsType: 'ActiveCompany',
+        matricsType: 'ActiveCompany',
       };
     });
     builder.addCase(getTopGainer.pending, (state) => ({
@@ -83,7 +100,7 @@ const mattricsSlice = createSlice({
         ...state,
         matrics,
         isLoading: false,
-        mattricsType: 'TopGainer',
+        matricsType: 'TopGainer',
       };
     });
     builder.addCase(getTopLosser.pending, (state) => ({
@@ -107,11 +124,11 @@ const mattricsSlice = createSlice({
         ...state,
         matrics,
         isLoading: false,
-        mattricsType: 'TopLosser',
+        matricsType: 'TopLosser',
       };
     });
   },
 });
 
-export const { setMatrics } = mattricsSlice.actions;
+export const { setMatricsType } = mattricsSlice.actions;
 export default mattricsSlice.reducer;

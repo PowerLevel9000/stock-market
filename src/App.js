@@ -6,8 +6,9 @@ import { getActiveCompany, getTopGainer, getTopLosser } from './redux/home/homeS
 
 function App() {
   const dispatch = useDispatch();
-  const type = useSelector((store) => store.mattricsType);
-
+  const type = useSelector((store) => store.matricsType);
+  const store = useSelector((store) => store);
+  console.log(store);
   useEffect(() => {
     if (type === 'ActiveCompany') {
       dispatch(getActiveCompany());
@@ -16,7 +17,7 @@ function App() {
     } else if (type === 'TopLosser') {
       dispatch(getTopLosser());
     }
-  }, [dispatch]);
+  }, [dispatch, type]);
 
   return (
     <div className="App">
