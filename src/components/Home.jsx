@@ -29,10 +29,6 @@ const Home = () => {
       </label>
       {isLoading ? <div className="loader">
         <RotatingLines
-          strokeColor="pink"
-          strokeWidth="5"
-          animationDuration="0.75"
-          width="96"
         />
       </div> : <div className="companies">
         {matrics.map((item, index) => (
