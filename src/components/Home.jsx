@@ -8,12 +8,14 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import bear from '../imgs/logo/bear.png'
 import bull from '../imgs/logo/bull.png'
+import { RotatingLines } from 'react-loader-spinner';
 
 const Home = () => {
-  const { matricsType: type, matrics } = useSelector((store) => store.matricsReducer);
+  const { matricsType: type, matrics, isLoading } = useSelector((store) => store.matricsReducer);
   const dispatch = useDispatch();
   return (
     <HomeWraper>
+
       <div className="carouselWrapper">
         <Carousel />
       </div>
@@ -26,7 +28,12 @@ const Home = () => {
           <option value="TopGainer">Top Gainers Today</option>
         </select>
       </label>
-      <div className="companies">
+      {isLoading ? <RotatingLines
+        strokeColor="pink"
+        strokeWidth="5"
+        animationDuration="0.75"
+        width="96"
+      /> : <div className="companies">
         {matrics.map((item, index) => (
           <div className={(index % 4 === 0 || index % 4 === 3 || index === 1) ? 'company' : 'company dark'} key={item.symbol}>
             <div className="indicator">
@@ -50,13 +57,13 @@ const Home = () => {
                 <div className="status">
                   <span>
                     Price Change : $
-                    <span style={item.status < 0 ? { color: 'white',  } : { color: 'green' }}>
+                    <span style={item.status < 0 ? { color: 'white', } : { color: 'green' }}>
                       {' '}
                       {item.status}
                     </span>
                   </span>
                   <span>
-                    Price Change% : 
+                    Price Change% :
                     {' '}
                     {item.statusPercentage}
                   </span>
@@ -65,7 +72,7 @@ const Home = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
     </HomeWraper>
   );
 };
@@ -200,10 +207,21 @@ const HomeWraper = styled.div`
         right: 30%;
         top: 67%;
       }
+      
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
+      .intro {
+        font-size: .8rem;
+        h2 {
+          font-size: 1rem;
+        }
+      }
 
+      .indicator{
+        top: 60%;
+        right:30%;
+      }
     }
   }
 
