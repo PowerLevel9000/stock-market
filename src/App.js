@@ -8,10 +8,12 @@ import { getCompanyDetails } from './redux/details/details';
 import Home from './components/Home';
 import Details from './components/Details';
 import { getActiveCompany, getTopGainer, getTopLosser } from './redux/home/homeSlice';
+import { getBlalanceSheet } from './redux/blalanceSheet/blalanceSheetSlice';
 
 function App() {
   const dispatch = useDispatch();
   const { querry } = useSelector((store) => store.detailsReducer);
+  const { querry: balanceQuerry } = useSelector((store) => store.blalanceSheetReducer);
 
   const type = useSelector((store) => store.matricsReducer.matricsType);
   const store = useSelector((store) => store);
@@ -29,6 +31,9 @@ function App() {
   useEffect(() => {
     dispatch(getCompanyDetails(querry));
   }, [dispatch, querry]);
+  useEffect(() => {
+    dispatch(getBlalanceSheet(balanceQuerry));
+  }, [dispatch, balanceQuerry]);
 
   return (
     <BrowserRouter>
