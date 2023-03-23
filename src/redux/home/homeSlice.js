@@ -10,10 +10,10 @@ const initialState = {
       symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
     },
     {
-      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
+      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: -0.009, statusPercentage: 6.8182,
     },
     {
-      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
+      symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: -0.009, statusPercentage: 6.8182,
     },
     {
       symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
