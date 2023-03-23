@@ -46,7 +46,6 @@ const mattricsSlice = createSlice({
   initialState,
   reducers: {
     setMatricsType: (state, { payload }) => {
-      console.log(payload);
       const newType = payload;
       return {
         ...state,
