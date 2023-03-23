@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setQuerry } from '../redux/details/details';
+import { setSheetQuerry } from '../redux/blalanceSheet/blalanceSheetSlice';
 
 const Details = () => {
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ const Details = () => {
         </span>
         <a href={details[0].website} target="_blank" rel="noreferrer">Companay official Website</a>
         <Link to="/details/full-details">Full Detail<i className="fa-solid fa-arrow-right" /></Link>
-        <Link to="/details/ballance-sheet">Short income-statement<i className="fa-solid fa-arrow-right" /></Link>
+        <Link onClick={()=>dispatch(setSheetQuerry(details[0].symbol))} to="/details/ballance-sheet">Short income-statement<i className="fa-solid fa-arrow-right" /></Link>
       </div>
       <div className="other-comapanies">
         {otherCompanies}
