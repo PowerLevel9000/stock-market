@@ -15,7 +15,6 @@ const Home = () => {
   const dispatch = useDispatch();
   return (
     <HomeWraper>
-
       <div className="carouselWrapper">
         <Carousel />
       </div>
@@ -28,12 +27,14 @@ const Home = () => {
           <option value="TopGainer">Top Gainers Today</option>
         </select>
       </label>
-      {isLoading ? <RotatingLines
-        strokeColor="pink"
-        strokeWidth="5"
-        animationDuration="0.75"
-        width="96"
-      /> : <div className="companies">
+      {isLoading ? <div className="loader">
+        <RotatingLines
+          strokeColor="pink"
+          strokeWidth="5"
+          animationDuration="0.75"
+          width="96"
+        />
+      </div> : <div className="companies">
         {matrics.map((item, index) => (
           <div className={(index % 4 === 0 || index % 4 === 3 || index === 1) ? 'company' : 'company dark'} key={item.symbol}>
             <div className="indicator">
@@ -78,9 +79,15 @@ const Home = () => {
 };
 
 const HomeWraper = styled.div`
+  width: 100%;
   margin: 0;
   .carouselWrapper {
     position: relative;
+  }
+
+  .loader {
+    diplay: grid;
+    place-items: center;
   }
 
   label {
