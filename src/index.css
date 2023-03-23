@@ -1,3 +1,10 @@
+:root {
+  --darkMain: rgba(234, 76, 137, 0.674);
+  --darkSub: rgb(234, 76, 137);
+}
+
 body {
   margin: 0;
+  background-color: var(--darkMain);
+  color: #fff;
 }

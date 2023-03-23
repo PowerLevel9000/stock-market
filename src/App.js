@@ -18,8 +18,6 @@ function App() {
   const { querry: balanceQuerry } = useSelector((store) => store.blalanceSheetReducer);
 
   const type = useSelector((store) => store.matricsReducer.matricsType);
-  const store = useSelector((store) => store);
-  console.log(store);
   useEffect(() => {
     if (type === 'ActiveCompany') {
       dispatch(getActiveCompany());
