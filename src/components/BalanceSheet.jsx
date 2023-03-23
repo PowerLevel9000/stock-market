@@ -2,7 +2,7 @@ import React from 'react';
 
 const BalanceSheet = () => (
   <div>
-    <h1>Hello from full Details</h1>
+    <h1>Hello from BalanceSheet</h1>
   </div>
 );
 
