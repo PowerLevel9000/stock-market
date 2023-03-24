@@ -35,7 +35,7 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ ](#faq)
+- [🧑‍💻 Credits ](#credit)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -211,6 +211,9 @@ If you like my Project give it a Star ✨🌟
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## credit <a name="credit"></a>
+The credit for the <a href="https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)"> design</a> goes to <a href="https://www.behance.net/sakwadesignstudio">nelson sakawa</a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
