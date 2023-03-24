@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const baseUrl = 'https://financialmodelingprep.com/api/v3/profile/';
-const apikey = '5d722d15c608f551c39bf2767d7e99dc';
+const apikey = '868f9e97f8723a6742f3ae0b41dad29a';
 
 export const getCompanyDetails = createAsyncThunk('details/getCompanyDetails', async (symbol = 'AAPL') => {
   const response = await fetch(`${baseUrl}${symbol}?apikey=${apikey}`);
@@ -10,7 +10,7 @@ export const getCompanyDetails = createAsyncThunk('details/getCompanyDetails', a
 });
 
 const initialState = {
-  // placeholder data
+  // placeholder Data in case aplincation breake due to limitated requests
   details: [
     {
       symbol: 'AAPL',

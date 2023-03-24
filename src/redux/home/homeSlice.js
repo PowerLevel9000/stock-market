@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const activeCompany = 'https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=32ecca3bfd5c1d373bee6285500c9fb2 ';
-const topGainer = 'https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=32ecca3bfd5c1d373bee6285500c9fb2 ';
-const topLosser = 'https://financialmodelingprep.com/api/v3/stock_market/losers?apikey=32ecca3bfd5c1d373bee6285500c9fb2 ';
+const activeCompany = 'https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=868f9e97f8723a6742f3ae0b41dad29a ';
+const topGainer = 'https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=868f9e97f8723a6742f3ae0b41dad29a ';
+const topLosser = 'https://financialmodelingprep.com/api/v3/stock_market/losers?apikey=868f9e97f8723a6742f3ae0b41dad29a ';
 
 const initialState = {
+  // placeholder Data in case aplincation breake due to limitated requests
   matrics: [
     {
       symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,

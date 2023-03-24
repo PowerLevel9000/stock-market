@@ -60,7 +60,7 @@ const Details = () => {
           <RotatingLines />
         </div>
       ) : (
-        <div id="top" className="focusDetails">
+        <div data-testid="details" id="top" className="focusDetails">
           <div className="logoWrap">
             <img src={details[0].image} alt={`${details[0].companyName}-logo`} />
           </div>
