@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const blalanceSheetUrl = 'https://financialmodelingprep.com/api/v3/income-statement/';
-const querry = '?limit=5&apikey=5d722d15c608f551c39bf2767d7e99dc';
+const querry = '?limit=5&apikey=868f9e97f8723a6742f3ae0b41dad29a';
 // const symbol = 'GLS'
 
 const initialState = {
