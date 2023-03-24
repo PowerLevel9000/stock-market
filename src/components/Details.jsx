@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -11,6 +11,16 @@ const Details = () => {
   const {
     detailsReducer: { details, isLoading }, matricsReducer: { matrics },
   } = useSelector((store) => store);
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const styleUp = {
     color: 'green',
@@ -71,18 +81,33 @@ const Details = () => {
                 </span>
               </div>
               <hr />
-              <div className="market">
-                <span className="vol">
-                  Average Volume :
-                  {' '}
-                  {details[0].volAvg}
-                </span>
-                <span className="vol">
-                  Market Capital :
-                  {' '}
-                  {details[0].mktCap}
-                </span>
-              </div>
+              {width < 425 ? (
+                <div className="market">
+                  <span className="vol">
+                    Avg Volume :
+                    {' '}
+                    {details[0].volAvg}
+                  </span>
+                  <span className="vol">
+                    Mkt Capital :
+                    {' '}
+                    {details[0].mktCap}
+                  </span>
+                </div>
+              ) : (
+                <div className="market">
+                  <span className="vol">
+                    Average Volume :
+                    {' '}
+                    {details[0].volAvg}
+                  </span>
+                  <span className="vol">
+                    Market Capital :
+                    {' '}
+                    {details[0].mktCap}
+                  </span>
+                </div>
+              )}
               <hr />
               <span className="vol dividend">
                 Last Dividend :
@@ -151,6 +176,7 @@ const DetailWrapper = styled.div`
       height: 52vh;
       img{
         height: 50vh;
+        overflow: hidden;
       }
     }
 
@@ -166,9 +192,23 @@ const DetailWrapper = styled.div`
       }
 
       .logoWrap {
-        height: 45vh;
+        height: 46vh;
         img{
-          height: 40vh;
+          height: 45vh;
+        }
+      }
+
+      .market {
+        flex-direction: column;
+        gap: 1px;
+      }
+    }
+
+    @media screen and (max-width: 325px) {
+      .logoWrap {
+        height: 49vh;
+        img{
+          height: 45vh;
         }
       }
     }

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCompanyDetails, setQuerry } from '../redux/details/details';
 import { setMatricsType } from '../redux/home/homeSlice';
@@ -13,6 +13,17 @@ import { RotatingLines } from 'react-loader-spinner';
 const Home = () => {
   const { matricsType: type, matrics, isLoading } = useSelector((store) => store.matricsReducer);
   const dispatch = useDispatch();
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <HomeWraper>
       <div className="carouselWrapper">
@@ -42,9 +53,9 @@ const Home = () => {
             <div className="intro">
               <div className="symbol">
                 <span>{item.symbol}</span>
-                <Link to="/details" ><i className="fa-solid fa-arrow-right" onClick={() => dispatch(setQuerry(item.symbol))} /></Link>
+                <Link to="/details#top" ><i className="fa-solid fa-arrow-right" onClick={() => dispatch(setQuerry(item.symbol))} /></Link>
               </div>
-              <h2>{item.name}</h2>
+              <h2>{width>768?item.name:width<426?item.name.substring(0,'ProShares UltraPro'.length):item.name.substring(0,'Bank of America Corporation'.length)}</h2>
               <div className="pricing">
                 <strong className="price">
                   Price : $
@@ -53,17 +64,24 @@ const Home = () => {
                 </strong>
                 <div className="status">
                   <span>
-                    Price Change : $
+                    Price Change :
                     <span style={item.status < 0 ? { color: 'white', } : { color: 'green' }}>
+                      $
                       {' '}
-                      {item.status}
+                      {item.status.toFixed(2)}
                     </span>
                   </span>
-                  <span>
+                  {width<425?(<span>
+                    Change
+                    {' '}
+                    % :
+                    {' '}
+                    {item.statusPercentage.toFixed(2)}
+                  </span>):(<span>
                     Price Change% :
                     {' '}
-                    {item.statusPercentage}
-                  </span>
+                    {item.statusPercentage.toFixed(2)}
+                  </span>)}
                 </div>
               </div>
             </div>
@@ -222,8 +240,13 @@ const HomeWraper = styled.div`
       }
 
       .indicator{
-        top: 60%;
+        top: 50%;
         right:30%;
+      }
+
+      .status{
+        width: 100%;
+        padding-right: .5rem;
       }
     }
   }
