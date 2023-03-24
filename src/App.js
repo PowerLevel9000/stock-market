@@ -1,57 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, { useEffect } from 'react';
+import {
+  BrowserRouter, Route, Routes,
+} from 'react-router-dom';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCompanyDetails } from './redux/details/details';
+import Home from './components/Home';
+import Details from './components/Details';
+import FullDetails from './components/FullDetails';
+import BalanceSheet from './components/BalanceSheet';
+import { getActiveCompany, getTopGainer, getTopLosser } from './redux/home/homeSlice';
+import { getBlalanceSheet } from './redux/blalanceSheet/blalanceSheetSlice';
 
 function App() {
+  const dispatch = useDispatch();
+  const { querry } = useSelector((store) => store.detailsReducer);
+  const { querry: balanceQuerry } = useSelector((store) => store.blalanceSheetReducer);
+
+  const type = useSelector((store) => store.matricsReducer.matricsType);
+  useEffect(() => {
+    if (type === 'ActiveCompany') {
+      dispatch(getActiveCompany());
+    } else if (type === 'TopGainer') {
+      dispatch(getTopGainer());
+    } else if (type === 'TopLosser') {
+      dispatch(getTopLosser());
+    }
+  }, [dispatch, type]);
+
+  useEffect(() => {
+    dispatch(getCompanyDetails(querry));
+  }, [dispatch, querry]);
+  useEffect(() => {
+    dispatch(getBlalanceSheet(balanceQuerry));
+  }, [dispatch, balanceQuerry]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/details" element={<Details />} />
+        <Route path="/details/full-details" element={<FullDetails />} />
+        <Route path="/details/ballance-sheet" element={<BalanceSheet />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
