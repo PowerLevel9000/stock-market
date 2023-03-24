@@ -102,7 +102,9 @@
 
 > This link will guide you to my project
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8d9134ee-50f3-49b0-91fd-5f3f68399a3d/deploy-status)](https://app.netlify.com/sites/stock-analysis-io/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8d9134ee-50f3-49b0-91fd-5f3f68399a3d/deploy-status)](https://stock-analysis-io.netlify.app/)
+
+presentation video ![here](https://www.loom.com/share/c9ce2a2e0f1f4c7a80420b51f00f4ae3) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
