@@ -6,8 +6,6 @@ const NavigationButton = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname.split('/').reverse()[0];
-  console.log(currentPath);
-
   const handleBackClick = () => {
     navigate(-1);
   };
