@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { RotatingLines } from 'react-loader-spinner';
 import { setQuerry } from '../redux/details/details';
 import { setSheetQuerry } from '../redux/blalanceSheet/blalanceSheetSlice';
+import NavigationButton from './featureComponets/NavigationButton';
 
 const Details = () => {
   const dispatch = useDispatch();
@@ -131,7 +132,9 @@ const Details = () => {
           </div>
         </div>
       )}
-
+      <div className="nav">
+        <NavigationButton />
+      </div>
       <div className="other-comapanies">
         {otherCompanies}
       </div>
@@ -143,7 +146,14 @@ const DetailWrapper = styled.div`
   margin: 0;
   padding: 0;
   position: relative;
+  .nav {
+    width: 100%;
+    position: absolute;
+    top: -5vh;
+    z-index: 3;
+  }
   .focusDetails {
+    margin-top: 5vh;
     width: 100%;
     display: grid;
     place-items: end;
@@ -176,6 +186,7 @@ const DetailWrapper = styled.div`
       height: 52vh;
       img{
         height: 50vh;
+        width: 50vh;
         overflow: hidden;
       }
     }
@@ -206,9 +217,10 @@ const DetailWrapper = styled.div`
 
     @media screen and (max-width: 325px) {
       .logoWrap {
-        height: 49vh;
+        height: 45vh;
         img{
-          height: 45vh;
+          height: 200px;
+          width: 200px;
         }
       }
     }

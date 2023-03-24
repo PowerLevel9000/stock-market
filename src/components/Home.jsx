@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import bear from '../imgs/logo/bear.png'
 import bull from '../imgs/logo/bull.png'
 import { RotatingLines } from 'react-loader-spinner';
+import NavigationButton from './featureComponets/NavigationButton';
 
 const Home = () => {
   const { matricsType: type, matrics, isLoading } = useSelector((store) => store.matricsReducer);
@@ -26,6 +27,7 @@ const Home = () => {
 
   return (
     <HomeWraper>
+      <NavigationButton />
       <div className="carouselWrapper">
         <Carousel />
       </div>
