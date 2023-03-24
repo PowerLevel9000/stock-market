@@ -16,6 +16,17 @@ const Carousel = () => {
   }, [currentIndex, images.length]);
   return (
     <CarouselWrapper className="carousel">
+      <div className="banner">
+        <div>
+          <h1>
+            Stock Market
+            <br />
+            The Game Changer
+          </h1>
+          <hr />
+          <p>Watch, analisis and Pick wisely </p>
+        </div>
+      </div>
       <img src={images[currentIndex]} alt="carousel" />
     </CarouselWrapper>
   );
@@ -25,6 +36,20 @@ const CarouselWrapper = styled.div`
   margin: 0;
   width: 100%;
   height: 40vh;
+  backdrop-filter: blur(5px);
+  .banner {
+    font-size: 1rem;
+    position: absolute;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(234, 76, 137, 50%);
+    p {
+      color: wheat;
+    }
+  }
   img {
     width: 100%;
     height: 100%;
