@@ -3,8 +3,7 @@
   <img src="./src/media/adarsh-logo/my-logo.png" alt="logo" width="140"  height="auto" />
   <img src="./src/media/habtamu-logo/my-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
-  <h1><b>Space Hub</b><br><br></h1>
-  
+  <h1><b>Stock Market Analysis</b><br><br></h1>
  </div>
 
 <div align="center">
@@ -41,11 +40,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Space  hub <a name="about-project"></a>
+# 📖 Stock Market Analysis <a name="about-project"></a>
 
-> This Project is a for space traveliing or kinda like fictional game action
+> This Project is a for Stock Market Analysis and to compare various stock performance
 
-**Space hub** is a React oriented  and API-based project
+**Space hub** is a React-oriented and API-based project
 
 <br>
 
@@ -78,7 +77,7 @@
 <details>
 <summary>API involved</summary>
   <ul>
-    <li><a href=""></a>Space-x API</li>
+    <li><a href="https://site.financialmodelingprep.com/developer/docs/"></a>Financial Modeling</li>
   </ul>
 </details>
 
@@ -91,9 +90,9 @@
 
 > Following features you should observe
 
-- **You can  join your missions**
-- **You can  reserve your rockets**
-- **you can check what mission you have and respective rockets**
+- **you can see the stock bulling and Bearing**
+- **You can  see the active **companies of **the **stock**** market****
+- **you can see short and full **details of **a **specific**** company****
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,7 +102,9 @@
 
 > This link will guide you to my project
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b8d43722-f03c-4861-8a1f-e78b089d5f8c/deploy-status)](https://space-hub-mission.netlify.app/)
+under construction
+
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/b8d43722-f03c-4861-8a1f-e78b089d5f8c/deploy-status)](https://space-hub-mission.netlify.app/) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,15 +142,15 @@ Clone this repository to your desired folder:
 
  Execute the following thing:
  
- - Pokemon dashboard
- - As a pokemon Social Media
+ - Stocks and State is manipulated by API 
+ - details page with proper logo
 
 
 ### Run tests
 
 - To run all test cases you need to run `npm test` in the root dir 
 - Linters for files run in the root dir
-  - `npx eslint .` for JS linting
+  - `npx eslint "**/*.{js,jsx}` for JS or JSX linting
   - `npx stylelint "**/*.{css,scss}"`for CSS or SCSS linting
   - `npx hint .` for HTML linting
   - `--fix` flag for intant fixable fix
@@ -162,6 +163,7 @@ You can deploy this project using:
 - Edit some changes
 - Run `npm run build` to make our project production ready
 - deploy it using [GitHub](www.github.com) pages 
+- or use Netlify or Render
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -177,22 +179,15 @@ You can deploy this project using:
 - Twitter: [@PowerLevel9002](https://twitter.com/PowerLevel9002?t=AIuSN7mTxk5a_MWpLolEjA&s=09)
 - LinkedIn: [@Adarsh Pathak](https://www.linkedin.com/in/adarsh-pathak-56a831256/)
 
-👤 **Habtamu**
-
-- GitHub: [@Habtamu210](https://github.com/Habtamu210)
-- Twitter: [@beleyaha](https://twitter.com/beleyaha)
-- LinkedIn: [@habtamu-](https://www.linkedin.com/in/habtamu-birru/)
-
-
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features that will add to the project.
 
-- [ ] **mobile and tablet version**
-- [ ] **improve functionality**
-- [ ] **improve styling**
+- [ ] **Search Feature**
+- [ ] **Crypto filter**
+- [ ] **Indicators of the stock market**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -202,7 +197,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/PowerLevel9000/react-group-project/issues).
+Feel free to check the [issues page](https://github.com/PowerLevel9000/stock-market/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -224,7 +219,7 @@ If you like my Project give it a Star ✨🌟
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/PowerLevel9000/react-group-project/blob/dev/LICENSE) licensed.
+This project is [MIT](https://github.com/PowerLevel9000/stock-market/blob/dev/LICENSE) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
