@@ -9,10 +9,18 @@ describe('Home Components testing: "companies"', () => {
   const initialState = {
     matricsReducer: {
       matrics: [
-        { id: 1, name: 'matrics 1', status: 9, statusPercentage: 18 },
-        { id: 2, name: 'matrics 2', status: 9, statusPercentage: 18 },
-        { id: 3, name: 'matrics 3', status: 9, statusPercentage: 18 },
-        { id: 4, name: 'matrics 4', status: 9, statusPercentage: 18 },
+        {
+          id: 1, name: 'matrics 1', status: 9, statusPercentage: 18,
+        },
+        {
+          id: 2, name: 'matrics 2', status: 9, statusPercentage: 18,
+        },
+        {
+          id: 3, name: 'matrics 3', status: 9, statusPercentage: 18,
+        },
+        {
+          id: 4, name: 'matrics 4', status: 9, statusPercentage: 18,
+        },
       ],
     },
     
