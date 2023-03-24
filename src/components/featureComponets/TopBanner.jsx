@@ -46,6 +46,7 @@ const TopWrap = styled.div`
   display: flex;
   gap: 1rem;
   padding: 1rem;
+  font-size: 1.5rem;
 
   .banner {
     diplay: flex;
@@ -63,13 +64,13 @@ const TopWrap = styled.div`
   }
 
   img {
-    width: 200px;
-    height: 200px;
+    width: 400px;
   }
   .info {
     width: 50%;
     display: flex;
     flex-direction: column;
+    font-size: 3.5rem;
     gap 1rem;
     h2 {
       margin: 0;
@@ -87,6 +88,10 @@ const TopWrap = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    .info {
+      font-size: 1rem;
+    }
     img {
       height:100px;
       width:100px;
