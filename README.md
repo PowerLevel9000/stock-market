@@ -102,9 +102,7 @@
 
 > This link will guide you to my project
 
-under construction
-
-<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/b8d43722-f03c-4861-8a1f-e78b089d5f8c/deploy-status)](https://space-hub-mission.netlify.app/) -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8d9134ee-50f3-49b0-91fd-5f3f68399a3d/deploy-status)](https://app.netlify.com/sites/stock-analysis-io/deploys)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
