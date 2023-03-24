@@ -1,8 +1,8 @@
 import { screen, render } from '@testing-library/react';
-import Details from '../components/Details';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import Details from '../components/Details';
 
 describe('Details container should be visible', () => {
   const mockStore = configureStore([]);
@@ -19,8 +19,8 @@ describe('Details container should be visible', () => {
           mktCap: 4,
           lastDiv: 5,
           website: '',
-        }
-      ]
+        },
+      ],
     },
 
     matricsReducer: {
@@ -52,10 +52,10 @@ describe('Details container should be visible', () => {
         <Provider store={store}>
           <Details />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
-    const detailsContainer = screen.getAllByTestId("details");
+    const detailsContainer = screen.getAllByTestId('details');
     expect(detailsContainer[0]).toBeInTheDocument();
-  })
-})
+  });
+});

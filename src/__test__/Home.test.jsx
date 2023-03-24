@@ -1,8 +1,8 @@
 import { screen, render } from '@testing-library/react';
-import Home from '../components/Home';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import Home from '../components/Home';
 
 describe('Home Components testing: "companies"', () => {
   const mockStore = configureStore([]);
@@ -26,11 +26,11 @@ describe('Home Components testing: "companies"', () => {
 
     imgReducer: {
       imgData: [
-        "",
-        "",
-        "",
-      ]
-    }
+        '',
+        '',
+        '',
+      ],
+    },
 
   };
   let store;
@@ -42,20 +42,20 @@ describe('Home Components testing: "companies"', () => {
         <Provider store={store}>
           <Home />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
   });
 
   test('is no of comapines is same as matrics length', () => {
-    const companiesContainers = screen.getAllByTestId("company");
-    expect(companiesContainers.length).toBe(4)
+    const companiesContainers = screen.getAllByTestId('company');
+    expect(companiesContainers.length).toBe(4);
   });
   test('is no of comapines is same as companies', () => {
-    const NavigationLinks = screen.getAllByRole("link");
-    expect(NavigationLinks.length).toBe(4)
+    const NavigationLinks = screen.getAllByRole('link');
+    expect(NavigationLinks.length).toBe(4);
   });
   test('is no of carousel in document', () => {
-    const carouselComponent = screen.getByTestId("carousel");
+    const carouselComponent = screen.getByTestId('carousel');
     expect(carouselComponent).toBeInTheDocument();
   });
-})
+});
