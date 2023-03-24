@@ -23,7 +23,7 @@ describe('Home Components testing: "companies"', () => {
         },
       ],
     },
-    
+
     imgReducer: {
       imgData: [
         "",
@@ -37,9 +37,6 @@ describe('Home Components testing: "companies"', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-  });
-
-  test('is no of comapines is same as store', () => {
     render(
       <BrowserRouter>
         <Provider store={store}>
@@ -47,7 +44,18 @@ describe('Home Components testing: "companies"', () => {
         </Provider>
       </BrowserRouter>
     );
+  });
+
+  test('is no of comapines is same as matrics length', () => {
     const companiesContainers = screen.getAllByTestId("company");
     expect(companiesContainers.length).toBe(4)
+  });
+  test('is no of comapines is same as companies', () => {
+    const NavigationLinks = screen.getAllByRole("link");
+    expect(NavigationLinks.length).toBe(4)
+  });
+  test('is no of carousel in document', () => {
+    const carouselComponent = screen.getByTestId("carousel");
+    expect(carouselComponent).toBeInTheDocument();
   });
 })

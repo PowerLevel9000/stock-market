@@ -15,7 +15,7 @@ const Carousel = () => {
     return () => clearInterval(intervalId);
   }, [currentIndex, images.length]);
   return (
-    <CarouselWrapper className="carousel">
+    <CarouselWrapper data-testid="carousel" className="carousel">
       <div className="banner">
         <div>
           <h1>
