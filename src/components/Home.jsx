@@ -49,7 +49,7 @@ const Home = () => {
           {matrics.map((item, index) => {
             const arrowIconClass = item.status < 0 ? 'fa-arrow-down' : 'fa-arrow-up';
             return (
-              <div className={(index % 4 === 0 || index % 4 === 3 || index === 1) ? 'company' : 'company dark'} key={item.symbol}>
+              <div data-testid = "company" className={(index % 4 === 0 || index % 4 === 3 || index === 1) ? 'company' : 'company dark'} key={item.symbol}>
                 <div className="indicator">
                   <i className={`fa-sharp fa-solid ${arrowIconClass}`} />
                 </div>
