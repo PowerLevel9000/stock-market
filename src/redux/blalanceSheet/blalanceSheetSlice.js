@@ -5,7 +5,7 @@ const querry = '?limit=5&apikey=5d722d15c608f551c39bf2767d7e99dc';
 // const symbol = 'GLS'
 
 const initialState = {
-  // placeholder Data
+  // placeholder Data in case aplincation breake due to limitated requests
   blalanceSheet: [
     {
       date: '2001-09-24',
