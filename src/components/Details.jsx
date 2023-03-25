@@ -116,7 +116,7 @@ const Details = () => {
                 {details[0].lastDiv}
               </span>
               <hr />
-              <a href={details[0].website} target="_blank" rel="noreferrer">Companay official Website</a>
+              <a href={details[0].website} target="_blank" rel="noreferrer">Company official Website</a>
               <hr />
               <div className="guide">
                 <Link to="/details/full-details">

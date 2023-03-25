@@ -44,7 +44,7 @@
 
 > This Project is a for Stock Market Analysis and to compare various stock performance
 
-**Space hub** is a React-oriented and API-based project
+**Stock Market Analysis** This is a React-Based Project, in this website you can analyze your stocks and compare them to optimize your profit, it works with the financial API, and apart from this you will find a responsive design and clean UI, and in the future maybe we have some more features for checking bitcoin and searching company stock by name and a detailed navigation bar
 
 <br>
 
@@ -91,7 +91,7 @@
 > Following features you should observe
 
 - **you can see the stock bulling and Bearing**
-- **You can  see the active **companies of **the **stock**** market****
+- **You can  see the **active companies **in** the ****** market****
 - **you can see short and full **details of **a **specific**** company****
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -153,7 +153,7 @@ Clone this repository to your desired folder:
   - `npx eslint "**/*.{js,jsx}` for JS or JSX linting
   - `npx stylelint "**/*.{css,scss}"`for CSS or SCSS linting
   - `npx hint .` for HTML linting
-  - `--fix` flag for intant fixable fix
+  - `--fix` flag for instant fixable fix
  
 
 ### Deployment

@@ -36,7 +36,7 @@ const FullDetails = () => {
       <TableWrap className="full details">
         <tr>
           <th>Parameter</th>
-          <th>Vlaue</th>
+          <th>Value</th>
         </tr>
         {detailsRow}
       </TableWrap>
@@ -47,10 +47,6 @@ const FullDetails = () => {
 const FullDetailsWrap = styled.div`
   h2 {
     text-align: center;
-  }
-
-  table {
-    
   } 
 `;
 

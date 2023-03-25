@@ -5,7 +5,7 @@ const topGainer = 'https://financialmodelingprep.com/api/v3/stock_market/gainers
 const topLosser = 'https://financialmodelingprep.com/api/v3/stock_market/losers?apikey=868f9e97f8723a6742f3ae0b41dad29a ';
 
 const initialState = {
-  // placeholder Data in case aplincation breake due to limitated requests
+  // placeholder Data in case application break due to Limited requests
   matrics: [
     {
       symbol: 'MULN', name: 'Mullen Automotive, Inc.', price: 0.141, status: 0.009, statusPercentage: 6.8182,
