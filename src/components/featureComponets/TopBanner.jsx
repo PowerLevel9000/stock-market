@@ -10,26 +10,26 @@ const TopBanner = () => {
     <TopWrap className="top">
       <div className="banner">
         <div className="logoWrap">
-          <img src={details[0].image} alt="Company-Logo" />
+          <img title="Company Logo" src={details[0].image} alt="Company-Logo" />
         </div>
         <div className="banner-details">
-          <h2>{details[0].companyName}</h2>
+          <h2 title="Company Name">{details[0].companyName}</h2>
         </div>
       </div>
       <div className="info">
-        <h2 className="symbol">{details[0].symbol}</h2>
-        <strong className="price">
+        <h2 title="Company Symbol" className="symbol">{details[0].symbol}</h2>
+        <strong title="Stock Price" className="price">
           Price : $
           {' '}
           {details[0].price}
         </strong>
         <div className="intro">
-          <span className="ceo">
+          <span title="Ceo Of The Company" className="ceo">
             CEO
             {'   :   '}
             {details[0].ceo}
           </span>
-          <span className="country">
+          <span title="Company Address" className="country">
             Company belongs to
             {' —: '}
             {details[0].country}

@@ -18,16 +18,16 @@ const Carousel = () => {
     <CarouselWrapper data-testid="carousel" className="carousel">
       <div className="banner">
         <div>
-          <h1>
+          <h1 title="App Teaser">
             Stock Market
             <br />
             The Game Changer
           </h1>
           <hr />
-          <p>Watch, analysis and Pick wisely </p>
+          <p title="Suggestion Hero">Watch, analysis and Pick wisely </p>
         </div>
       </div>
-      <img src={images[currentIndex]} alt="carousel" />
+      <img title="Carousel Image" src={images[currentIndex]} alt="carousel" />
     </CarouselWrapper>
   );
 };

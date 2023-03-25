@@ -13,15 +13,15 @@ const NavigationButton = () => {
   return (
     <NavWrapper>
       <div>
-        <button type="button" onClick={handleBackClick}>
+        <button title="Move Back" type="button" onClick={handleBackClick}>
           <i className="fa-solid fa-angle-left" />
         </button>
-        <span>{!currentPath ? 'Home' : currentPath}</span>
+        <span title="Current Page">{!currentPath ? 'Home' : currentPath}</span>
       </div>
       <div>
-        <i className="fa-solid fa-magnifying-glass" />
-        <i className="fa-solid fa-microphone" />
-        <i className="fa-solid fa-gear" />
+        <i title="Search" className="fa-solid fa-magnifying-glass" />
+        <i title="Mike Search" className="fa-solid fa-microphone" />
+        <i title="Settings" className="fa-solid fa-gear" />
       </div>
     </NavWrapper>
   );
@@ -41,12 +41,16 @@ const NavWrapper = styled.nav`
     border: none;
     font-size: 2rem;
     color: white;
+    cursor: pointer;
   }
 
   div {
     display: flex;
     gap: 2rem;
     align-items: center;
+    i {
+      cursor: pointer;
+    }
   }
   z-index: 2;
 

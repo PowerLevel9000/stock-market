@@ -22,8 +22,8 @@ const FullDetails = () => {
 
   const detailsRow = objEntries.map(([key, value]) => (
     <tr key={key}>
-      <td>{key}</td>
-      <td>{regex.test(getValue(value)) ? <a href={getValue(value)}>{key}</a> : getValue(value)}</td>
+      <td title="Parameter">{key}</td>
+      <td title="value">{regex.test(getValue(value)) ? <a href={getValue(value)}>{key}</a> : getValue(value)}</td>
     </tr>
   ));
 
@@ -32,11 +32,11 @@ const FullDetails = () => {
       <NavigationButton />
       <TopBanner />
       <hr />
-      <h2>Company&apos;s Full Details</h2>
+      <h2 title="Table Header">Company&apos;s Full Details</h2>
       <TableWrap className="full details">
         <tr>
-          <th>Parameter</th>
-          <th>Value</th>
+          <th title="Column Heading">Parameter</th>
+          <th title="Column Heading">Value</th>
         </tr>
         {detailsRow}
       </TableWrap>

@@ -31,13 +31,13 @@ const Home = () => {
       <div className="carouselWrapper">
         <Carousel />
       </div>
-      <label htmlFor="filter">
+      <label title="Make you Choice" htmlFor="filter">
         Choose your Interest :
         {' '}
-        <select value={type} onChange={(e) => dispatch(setMatricsType(e.target.value))} name="filter" id="filter">
-          <option value="ActiveCompany">Active Companies</option>
-          <option value="TopLosser">Top Losers Today</option>
-          <option value="TopGainer">Top Gainers Today</option>
+        <select title="Select Options" value={type} onChange={(e) => dispatch(setMatricsType(e.target.value))} name="filter" id="filter">
+          <option title="Active Company" value="ActiveCompany">Active Companies</option>
+          <option title="Losing Company" value="TopLosser">Top Losers Today</option>
+          <option title="Gaining Company" value="TopGainer">Top Gainers Today</option>
         </select>
       </label>
       {isLoading ? (
@@ -50,26 +50,26 @@ const Home = () => {
             const arrowIconClass = item.status < 0 ? 'fa-arrow-down' : 'fa-arrow-up';
             return (
               <div data-testid = "company" className={(index % 4 === 0 || index % 4 === 3 || index === 1) ? 'company' : 'company dark'} key={item.symbol}>
-                <div className="indicator">
+                <div title="Indicator" className="indicator">
                   <i className={`fa-sharp fa-solid ${arrowIconClass}`} />
                 </div>
-                <div className="logoWraper">
+                <div title="Indicator Logo" className="logoWraper">
                   <img src={item.status < 0 ? bear : bull} alt="" />
                 </div>
                 <div className="intro">
                   <div className="symbol">
-                    <span>{item.symbol}</span>
-                    <Link to="/details#top"><i className="fa-solid fa-arrow-right" onClick={() => dispatch(setQuerry(item.symbol))} /></Link>
+                    <span title="Company Symbol">{item.symbol}</span>
+                    <Link title="See Details" to="/details#top"><i className="fa-solid fa-arrow-right" onClick={() => dispatch(setQuerry(item.symbol))} /></Link>
                   </div>
-                  <h2>{width > 768 ? item.name : width < 426 ? item.name.substring(0, 'ProShares UltraPro'.length) : item.name.substring(0, 'Bank of America Corporation'.length)}</h2>
+                  <h2 title="Company Name">{width > 768 ? item.name : width < 426 ? item.name.substring(0, 'ProShares UltraPro'.length) : item.name.substring(0, 'Bank of America Corporation'.length)}</h2>
                   <div className="pricing">
-                    <strong className="price">
+                    <strong title="Stock Price" className="price">
                       Price : $
                       {' '}
                       {item.price}
                     </strong>
                     <div className="status">
-                      <span>
+                      <span title="Price Change Today">
                         Price Change :
                         <span style={item.status < 0 ? { color: 'white' } : { color: 'green' }}>
                           $
@@ -78,7 +78,7 @@ const Home = () => {
                         </span>
                       </span>
                       {width < 425 ? (
-                        <span>
+                        <span title="Price Change Percentage">
                           Change
                           {' '}
                           % :
@@ -86,7 +86,7 @@ const Home = () => {
                           {item.statusPercentage.toFixed(2)}
                         </span>
                       ) : (
-                        <span>
+                        <span title="Price Change Percentage">
                           Price Change% :
                           {' '}
                           {item.statusPercentage.toFixed(2)}
@@ -121,12 +121,14 @@ const HomeWraper = styled.div`
     background-color: var(--darkSub);
     padding: 0.3rem;
     font-size: 1.2rem;
+    cursor: text;
     select {
       border-radius: 1rem;
       color: white;
       background-color: var(--darkMain);
       border-color: white;
       outline: none;
+      cursor: pointer;
     }
   }
 
