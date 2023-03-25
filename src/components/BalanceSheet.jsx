@@ -23,11 +23,11 @@ const BalanceSheet = () => {
       <NavigationButton />
       <TopBanner />
       <hr />
-      <h1>BalanceSheet Format Under Contruction</h1>
+      <h1>BalanceSheet Format Under Construction</h1>
       <TableWrap>
         <tr>
           <th>Parameter</th>
-          <th>Vlaue</th>
+          <th>Value</th>
         </tr>
         {data}
       </TableWrap>

@@ -24,7 +24,7 @@ const Carousel = () => {
             The Game Changer
           </h1>
           <hr />
-          <p>Watch, analisis and Pick wisely </p>
+          <p>Watch, analysis and Pick wisely </p>
         </div>
       </div>
       <img src={images[currentIndex]} alt="carousel" />

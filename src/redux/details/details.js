@@ -10,7 +10,7 @@ export const getCompanyDetails = createAsyncThunk('details/getCompanyDetails', a
 });
 
 const initialState = {
-  // placeholder Data in case aplincation breake due to limitated requests
+  // placeholder Data in case application break due to limited requests
   details: [
     {
       symbol: 'AAPL',

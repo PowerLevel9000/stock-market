@@ -32,11 +32,11 @@ const Home = () => {
         <Carousel />
       </div>
       <label htmlFor="filter">
-        Choose a Intrest :
+        Choose your Interest :
         {' '}
         <select value={type} onChange={(e) => dispatch(setMatricsType(e.target.value))} name="filter" id="filter">
-          <option value="ActiveCompany">Active Companines</option>
-          <option value="TopLosser">Top Lossers Today</option>
+          <option value="ActiveCompany">Active Companies</option>
+          <option value="TopLosser">Top Losers Today</option>
           <option value="TopGainer">Top Gainers Today</option>
         </select>
       </label>
