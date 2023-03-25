@@ -32,13 +32,14 @@ const Details = () => {
   const otherCompanies = matrics.filter((company) => company.symbol !== details[0].symbol)
     .map((company) => (
       <div key={company.symbol} className="company-row">
-        <span>{company.symbol}</span>
-        <strong>{company.name.substring(0, 6)}</strong>
-        <span>{company.price.toFixed(2)}</span>
-        <span>{company.status.toFixed(2)}</span>
-        {company.status < 0 ? <i className="fa-solid fa-arrow-down" style={styleDwon} /> : <i className="fa-solid fa-arrow-up" style={styleUp} />}
+        <span title="Company Symbol">{company.symbol}</span>
+        <strong title="Company Name">{company.name.substring(0, 6)}</strong>
+        <span title="Company Price">{company.price.toFixed(2)}</span>
+        <span title="Company Price Change">{company.status.toFixed(2)}</span>
+        {company.status < 0 ? <i title="Indicator" className="fa-solid fa-arrow-down" style={styleDwon} /> : <i title="Indicator" className="fa-solid fa-arrow-up" style={styleUp} />}
         <a href="#top">
           <button
+            title="See Details"
             type="button"
             className="button"
             onClick={() => dispatch(setQuerry(company.symbol))}
@@ -56,26 +57,26 @@ const Details = () => {
   return (
     <DetailWrapper>
       {isLoading ? (
-        <div className="loader">
+        <div title="Loader" className="loader">
           <RotatingLines />
         </div>
       ) : (
         <div data-testid="details" id="top" className="focusDetails">
           <div className="logoWrap">
-            <img src={details[0].image} alt={`${details[0].companyName}-logo`} />
+            <img title="Logo" src={details[0].image} alt={`${details[0].companyName}-logo`} />
           </div>
           <div className="banner">
             <div className="wrap">
-              <span className="symbol">{details[0].symbol}</span>
-              <h2>{details[0].companyName}</h2>
+              <span title="Company Symbol" className="symbol">{details[0].symbol}</span>
+              <h2 title="Company Name">{details[0].companyName}</h2>
               <hr />
               <div className="price">
-                <strong>
+                <strong title="Stock Price">
                   Price : $
                   {' '}
                   {details[0].price}
                 </strong>
-                <span className="vol">
+                <span title="Stock Price Change" className="vol">
                   Change in Price : $
                   {' '}
                   {details[0].changes}
@@ -84,12 +85,12 @@ const Details = () => {
               <hr />
               {width < 425 ? (
                 <div className="market">
-                  <span className="vol">
+                  <span title="Average Volume USD" className="vol">
                     Avg Volume :
                     {' '}
                     {details[0].volAvg}
                   </span>
-                  <span className="vol">
+                  <span title="Market Capital USD" className="vol">
                     Mkt Capital :
                     {' '}
                     {details[0].mktCap}
@@ -97,12 +98,12 @@ const Details = () => {
                 </div>
               ) : (
                 <div className="market">
-                  <span className="vol">
+                  <span title="Average Volume USD" className="vol">
                     Average Volume :
                     {' '}
                     {details[0].volAvg}
                   </span>
-                  <span className="vol">
+                  <span title="Market Capital USD" className="vol">
                     Market Capital :
                     {' '}
                     {details[0].mktCap}
@@ -110,21 +111,23 @@ const Details = () => {
                 </div>
               )}
               <hr />
-              <span className="vol dividend">
+              <span title="Last Dividend Amount USD" className="vol dividend">
                 Last Dividend :
                 {' '}
                 {details[0].lastDiv}
               </span>
               <hr />
-              <a href={details[0].website} target="_blank" rel="noreferrer">Company official Website</a>
+              <a title="Company Website" href={details[0].website} target="_blank" rel="noreferrer">Company official Website</a>
               <hr />
               <div className="guide">
-                <Link to="/details/full-details">
+                <Link title="Full Details Of Company" to="/details/full-details">
                   Full Detail
+                  {' '}
                   <i className="fa-solid fa-arrow-right" />
                 </Link>
-                <Link onClick={() => dispatch(setSheetQuerry(details[0].symbol))} to="/details/ballance-sheet">
+                <Link title="Balance Sheet Of Company" onClick={() => dispatch(setSheetQuerry(details[0].symbol))} to="/details/ballance-sheet">
                   Short income-statement
+                  {' '}
                   <i className="fa-solid fa-arrow-right" />
                 </Link>
               </div>
@@ -166,6 +169,10 @@ const DetailWrapper = styled.div`
       z-index: 1;
       font-size: 1.5rem;
       backdrop-filter: blur(5px);
+
+      a {
+        cursor: pointer;
+      }
       h2 {
         margin: 0.5rem 0;
       }

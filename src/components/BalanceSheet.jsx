@@ -12,8 +12,8 @@ const BalanceSheet = () => {
     const objEntries = Object.entries(item);
     const dataSpread = objEntries.map(([key, value]) => (
       <tr key={key}>
-        <td style={{ width: '20px' }}>{key}</td>
-        <td>{regex.test(value) ? <a href={value}>{key}</a> : value}</td>
+        <td title="Parameter" style={{ width: '20px' }}>{key}</td>
+        <td title="Value">{regex.test(value) ? <a href={value}>{key}</a> : value}</td>
       </tr>
     ));
     return dataSpread;
@@ -23,11 +23,11 @@ const BalanceSheet = () => {
       <NavigationButton />
       <TopBanner />
       <hr />
-      <h1>BalanceSheet Format Under Construction</h1>
+      <h1 title="Table Caption">BalanceSheet Format Under Construction</h1>
       <TableWrap>
         <tr>
-          <th>Parameter</th>
-          <th>Value</th>
+          <th title="Column Heading">Parameter</th>
+          <th title="Column Heading">Value</th>
         </tr>
         {data}
       </TableWrap>
