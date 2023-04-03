@@ -221,4 +221,4 @@ The credit for the <a href="https://www.behance.net/gallery/31579789/Ballhead-Ap
 This project is [MIT](https://github.com/PowerLevel9000/stock-market/blob/dev/LICENSE) licensed.
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>) </p>
