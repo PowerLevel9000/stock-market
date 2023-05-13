@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
-  <img src="./src/media/adarsh-logo/my-logo.png" alt="logo" width="140"  height="auto" />
+  <img src="https://user-images.githubusercontent.com/103900838/232334733-a5a82cb8-0af9-460a-b2dd-d9e5767d1d6c.png" alt="logo" width="140"  height="auto" />
   <img src="./src/media/habtamu-logo/my-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h1><b>Stock Market Analysis</b><br><br></h1>
