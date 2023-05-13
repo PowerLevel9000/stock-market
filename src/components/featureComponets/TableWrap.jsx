@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 const TableWrap = styled.table`
-  width: 90%;
+  width: 90% !important;
   text-align: left;
   border: 1px solid white;
   margin: 1rem auto;
   border-radius: .5rem;
+  overflow: auto !important;
 
   th,
   td {

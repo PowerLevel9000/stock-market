@@ -24,18 +24,30 @@ const BalanceSheet = () => {
       <TopBanner />
       <hr />
       <h1 title="Table Caption">BalanceSheet Format Under Construction</h1>
-      <TableWrap>
-        <tr>
-          <th title="Column Heading">Parameter</th>
-          <th title="Column Heading">Value</th>
-        </tr>
-        {data}
-      </TableWrap>
+      <div className="controller">
+        <TableWrap>
+          <tr>
+            <th title="Column Heading">Parameter</th>
+            <th title="Column Heading">Value</th>
+          </tr>
+          {data}
+        </TableWrap>
+      </div>
+
     </SheetWrap>
   );
 };
 
 const SheetWrap = styled.div`
+  width: 100%;
+  .controller {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .controller::-webkit-scrollbar {
+    display: none;
+  }
   h1 {
     text-align: center;
   }

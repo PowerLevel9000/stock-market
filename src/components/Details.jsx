@@ -120,12 +120,12 @@ const Details = () => {
               <a title="Company Website" href={details[0].website} target="_blank" rel="noreferrer">Company official Website</a>
               <hr />
               <div className="guide">
-                <Link title="Full Details Of Company" to="/details/full-details">
+                <Link style={{ color: 'blue' }} title="Full Details Of Company" to="/details/full-details">
                   Full Detail
                   {' '}
                   <i className="fa-solid fa-arrow-right" />
                 </Link>
-                <Link title="Balance Sheet Of Company" onClick={() => dispatch(setSheetQuerry(details[0].symbol))} to="/details/ballance-sheet">
+                <Link style={{ color: 'blue' }} title="Balance Sheet Of Company" onClick={() => dispatch(setSheetQuerry(details[0].symbol))} to="/details/ballance-sheet">
                   Short income-statement
                   {' '}
                   <i className="fa-solid fa-arrow-right" />

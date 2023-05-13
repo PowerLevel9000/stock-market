@@ -11,6 +11,7 @@ import FullDetails from './components/FullDetails';
 import BalanceSheet from './components/BalanceSheet';
 import { getActiveCompany, getTopGainer, getTopLosser } from './redux/home/homeSlice';
 import { getBlalanceSheet } from './redux/blalanceSheet/blalanceSheetSlice';
+import ScrollToTop from './ScrollToTOp';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/details" element={<Details />} />
