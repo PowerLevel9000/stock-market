@@ -19,6 +19,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [🧪 Linters And test](#linters)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -47,6 +48,9 @@
 **Stock Market Analysis** This is a React-Based Project, in this website you can analyze your stocks and compare them to optimize your profit, it works with the financial API, and apart from this you will find a responsive design and clean UI, and in the future maybe we have some more features for checking bitcoin and searching company stock by name and a detailed navigation bar
 
 <br>
+
+## 🧪 Linters And test <a name="linters"></a>
+[![Linters](https://github.com/PowerLevel9000/stock-market/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/stock-market/actions/workflows/linters.yml)
 
 ## 🛠 Built With <a name="built-with"></a>
 
