@@ -45,6 +45,7 @@ const FullDetails = () => {
 };
 
 const FullDetailsWrap = styled.div`
+  overflow: scrollable;
   h2 {
     text-align: center;
   } 
