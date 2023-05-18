@@ -96,8 +96,8 @@
 > Following features you should observe
 
 - **you can see the stock bulling and Bearing**
-- **You can  see the **active companies **in** the ****** market****
-- **you can see short and full **details of **a **specific**** company****
+- **You can  see the **active companies in the  market**
+- **you can see short and full **details of a specific company***
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -216,7 +216,7 @@ If you like my Project give it a Star ✨🌟
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## credit <a name="credit"></a>
+## Credit <a name="credit"></a>
 The credit for the <a href="https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)"> design</a> goes to <a href="https://www.behance.net/sakwadesignstudio">nelson sakawa</a>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- LICENSE -->
